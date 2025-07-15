@@ -49,15 +49,16 @@ ggplot(subset_merged, aes(x = ABHD14B)) +
 ```{r}
 ggplot(subset_merged, aes(x = age, y = ABHD14B)) +
   geom_point() +
-  labs(title = "Scatterplot b/w Gene expression and Age", y = "Gene expression Value of ABHD14B", x = "Age")
+  labs(title = "Scatterplot b/w Gene Expression and Age", y = "ABHD14B Gene Expression", x = "Age")
 ```
 
 
 ```{r}
+subset_merged = subset_merged[subset_merged$sex != " unknown", ]
+
 ggplot(subset_merged, aes(x = sex, y = ABHD14B, fill = disease_status)) +
   geom_boxplot() +
   labs(title = "ABHD14B Gene Expression by Sex and Disease Status",
        x = "Sex", y = "ABHD14B Gene Expression")
 ```
-
 
